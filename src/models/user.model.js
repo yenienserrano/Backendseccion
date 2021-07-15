@@ -1,4 +1,4 @@
-const { Schema, Model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 const { compareSync, genSaltSync, hashSync } = require("bcryptjs");
 
 const UserSchema = new Schema({
@@ -30,4 +30,4 @@ UserSchema.pre("save", async function (next) {
   next();
 });
 
-module.exports = Model("user", UserSchema);
+module.exports = model("user", UserSchema);

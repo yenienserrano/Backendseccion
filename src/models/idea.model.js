@@ -1,4 +1,4 @@
-const { Schema, Model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const IdeaSchema = new Schema({
   idea: { type: String, required: true },
@@ -23,4 +23,4 @@ const IdeaSchema = new Schema({
 
 IdeaSchema.plugin(require("mongoose-autopopulate"));
 
-module.exports = Model.bind("idea", IdeaSchema);
+module.exports = model.bind("idea", IdeaSchema);
